@@ -1,8 +1,4 @@
 "use strict"
-function getPlayerName(){						//prompts for player name
-	var name=prompt("Player Name", "John Doe")
-	return name
-}
 
 function getPlayerDiceChoice(){					//prompts for dice choice
 	var playerDiceChoice= Number(prompt("Choose a die!\n"+
@@ -72,6 +68,7 @@ function getRoll(DiceChoice){		//gets roll value
 			return(roll);
 		case 6:
 			var roll=roll20Sided();
+			
 			return(roll);
 		default:
 			alert("Please choose a die!(1-6)")
@@ -85,6 +82,7 @@ function getRoll(DiceChoice){		//gets roll value
 }
 function getPlayerMove(){					//collects user data						
 	var playerRoll= getRoll(getPlayerDiceChoice()) 
+	alert("you rolled a:" +'\n' + playerRoll)
 	return playerRoll
 }
 function difficultySelector(selection){
@@ -117,14 +115,14 @@ function mainFunction(){
 				console.log("player"+playerData)
 			computerData+= getRoll(roll6Sided())
 				console.log("computer"+computerData)
+				alert("Your current score is"+ '\n' + playerData + '\n' + "Your opponents current score is"+ '\n' + computerData)
 					if (playerData>=40 && computerData>=difficulty){
-						console.log("too bad you tied")
+						alert("too bad you tied")
 					}else if(playerData>=40){
-						console.log("You beat that filthy computer...Yes you")
+						alert("You beat that filthy computer...Yes you")
 					}else if (computerData>difficulty) {
-						console.log("YAY YOU WON...wait no you didnt. How do you even lose to this basic ass computer")
+						alert("YAY YOU WON...wait no you didnt. How do you even lose to this basic computer")
 					}
 		}
 }
 
-mainFunction()
