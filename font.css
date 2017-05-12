@@ -1,0 +1,9 @@
+@font-face{
+  font-family: dimitri;
+  src:url(dimitri.TTF);
+ }
+
+ .titleHeader{
+ 	font-family: dimitri, sans-serif;
+ 	font-size: 80px
+ }
